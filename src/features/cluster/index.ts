@@ -47,7 +47,9 @@ export function connectCluster(config: configType, msgHandler?: (ws: WebSocket, 
   const connect = () => {
     const url = `${wsBaseUrl}/connection?uuid=${config.cluster_client_uuid}&version=${version}`;
 
-    ws = new WebSocket(url);
+    ws = new WebSocket(url, {
+      headers: { Authorization: 'Bearer ' + config.cluster_server_auth },
+    });
 
     ws.on('open', () => {
       console.log('[Cluster] Server connected');
