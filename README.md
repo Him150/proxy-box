@@ -51,7 +51,6 @@
 ```json
 {
   "port": 3000,
-  "middle_port": 58515,
   "path": "/api",
   "network": "ws",
   "uuid": "不填时自动生成",

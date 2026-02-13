@@ -8,50 +8,7 @@ interface Config {
   routing: Object;
   dns?: Object;
 }
-interface UIClientConfig {
-  // Default: 127.0.0.1
-  InboundSocksAddress: string;
-  InboundHttpAddress: string;
-  InboundApiAddress: string;
-  // 1-65535
-  InboundSocksPort: number;
-  InboundHttpPort: number;
-  InboundApiPort: number;
-  // Default: true
-  udpEnabled: boolean;
-  // Default: false
-  sniffingEnabled: boolean;
-  // Default: false
-  muxEnabled: boolean;
-  // [vmess|vless|trojan|ss|socks]
-  OutboundProtocol: string;
-  OutboundUUID: string;
-  OutboundRemoteHost: string;
-  // 1-65535
-  OutboundRemotePort: number;
-  // tcp/kcp/ws/http/quic/grpc/httpupgrad/xhttp => TCP/mKCP/WebSocket(deprecated)/ HTTP/2 /QUIC/gRPC/HTTPUpragde/XHTTP
-  // XHTTP: https://github.com/XTLS/Xray-core/discussions/4113
-  OutboundStreamType: string;
-  // vmess:auto/aes-128-gcm/chacha20-poly1305/none,vless:none
-  // Default: vmess auto,vless none
-  OutboundEncryption?: string;
-  OutboundAlterId?: number;
-  // none/tls/xtls
-  // Default: none
-  OutboundStreamSecurity: string;
-  // Default: ws/http /,...
-  OutboundPath: string;
-  // Default: this.OutboundRemoteHost
-  OutboundHost?: string;
-}
-interface coreClientConnectObject {
-  socksAdress?: string;
-  httpAddress?: string;
-  apiAddress?: string;
-  apiPort: number;
-  socksPort: number;
-  httpPort: number;
-}
+
 interface UIServerConfig {
   // Default: 0.0.0.0
   InboundAddress: string;
