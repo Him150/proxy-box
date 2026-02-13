@@ -19,13 +19,13 @@ export async function getClusterConfig(config: configType) {
 }
 
 export async function getConfig(url: string, uuid: string, auth?: string) {
-  const response: JSON = await axios.get(url + `/config?uuid=${uuid}`, {
+  const response = await axios.get(url + `/config?uuid=${uuid}`, {
     headers: {
       Authorization: 'Bearer ' + auth,
     },
   });
   console.log('[Initialization]', 'Obtain cluster configuration successfully');
-  return response;
+  return response.data;
 }
 
 export function getClusterWebsocket(url: string) {
