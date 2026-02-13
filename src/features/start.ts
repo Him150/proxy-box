@@ -81,7 +81,7 @@ export async function startCore(config: configType): Promise<{ success: boolean;
     InboundAddress: '127.0.0.1',
     InboundPort: config.middle_port,
     InboundProtocol: config.protocol,
-    sniffingEnabled: false,
+    sniffingEnabled: true,
     InboundUUID: config.uuid,
     InboundStreamType: config.network as any,
     InboundDecryption: config.decryption,

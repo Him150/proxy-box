@@ -168,6 +168,7 @@ export default class CoreConfigHandler {
       config.routing = UIServerConfig.RoutingCustom;
     } else {
       config.routing = {
+        domainStrategy: 'AsIs',
         rules: [
           {
             inboundTag: ['api'],
