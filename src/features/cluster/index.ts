@@ -69,7 +69,10 @@ export function connectCluster(config: configType, msgHandler?: (ws: WebSocket, 
         const msg = JSON.parse(buf.toString());
         msgHandler?.(ws, msg.type, msg.data);
       } catch {
-        console.log('[Cluster] receive:', buf.toString());
+        try {
+          let msg = buf.toString();
+          if (msg != 'pong') console.log('[Cluster] receive:', msg);
+        } catch (error) {}
       }
     });
 
